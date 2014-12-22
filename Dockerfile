@@ -17,7 +17,7 @@ RUN apt-get update -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y wine1.7 winetricks xvfb xrdp xfce4-session xfce4 ca-certificates lib32gcc1 curl unzip && \
     apt-get autoclean -y && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Add winetricks
 RUN wget -O /usr/local/bin/winetricks http://kegel.com/wine/winetricks
@@ -25,5 +25,8 @@ RUN chmod 755 /usr/local/bin/winetricks
 
 # Add run.sh script
 ADD run.sh /run.sh
+
+EXPOSE 3389
+
 CMD /run.sh
 
