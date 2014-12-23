@@ -14,7 +14,7 @@ RUN apt-get update -y && \
     dpkg --add-architecture i386 && \
     apt-get update -y && \
     echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y wine1.7 winetricks xvfb xrdp xfce4-session xfce4 ca-certificates lib32gcc1 curl unzip && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y wine1.7 winetricks xvfb xrdp xfce4-session xfce4 ca-certificates lib32gcc1 curl unzip tightvncserver && \
     apt-get autoclean -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
