@@ -32,6 +32,8 @@ xrdp-keygen xrdp /etc/xrdp/rsakeys.ini
 xrdp -nodaemon &
 XRDP_PID=$!
 
+export DISPLAY=:0.0
+
 xfce4-session
 
 kill $XTIGHTVNC_PID $XRDP_PID
